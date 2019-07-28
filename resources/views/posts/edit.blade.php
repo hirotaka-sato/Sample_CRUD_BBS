@@ -49,11 +49,11 @@
                     </div>
 
                     <div class="mt-5">
-                        <a class="btn btn-secondary" href="{{ route('posts.show', ['post' => $post]) }}">
+                        <a class="btn btn-default" href="{{ route('posts.show', ['post' => $post]) }}">
                             キャンセル
                         </a>
 
-                        <button type="submit" class="btn btn-primary">
+                        <button type="submit" class="btn btn-info">
                             更新する
                         </button>
                     </div>
