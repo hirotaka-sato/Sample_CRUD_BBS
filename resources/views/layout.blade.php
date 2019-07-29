@@ -18,13 +18,17 @@
                 侍エンジニア掲示板　Simple BBS Test-01
             </a>
             <a class="btn btn-success" href="{{ url('/home') }}">
-                    HOME
+                    Home
             </a>
         </div>
     </header>
 
     <div>
         @yield('content')
+    </div>
+
+    <div>
+        @yield('footer')
     </div>
 </body>
 </html>

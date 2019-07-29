@@ -33,7 +33,6 @@
                         <label for="message">
                             メッセージ
                         </label>
-
                         <textarea
                             id="message"
                             name="message"

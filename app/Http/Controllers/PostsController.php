@@ -29,7 +29,7 @@ class PostsController extends Controller
 
         Post::create($params);
 
-        return redirect()->route('top');
+        return redirect('/');
     }
 
     public function show($id)

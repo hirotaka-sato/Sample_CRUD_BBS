@@ -4,7 +4,7 @@
     <div class="container mt-4">
         <div class="mb-4">
             <a href="{{ route('posts.create') }}" class="btn btn-info">
-                投稿を新規作成する
+                投稿の新規作成
             </a>
         </div>
         @foreach ($posts as $post)
@@ -19,11 +19,11 @@
                     </p>
                 </div>
                 <a class="card-info" href="{{ route('posts.show', ['post' => $post]) }}">
-                    続きを読む
+                    詳細画面
                 </a>
                 <div class="card-footer">
                     <span class="mr-2">
-                        投稿日時 {{ $post->created_at->format('Y.m.d') }}
+                        更新日時 {{ $post->updated_at->format('y.m.d') }}
                     </span>
                 </div>
             </table>
@@ -32,5 +32,11 @@
         <div class="d-flex justify-content-center mb-5">
             {{ $posts->links() }}
         </div>
+    </div>
+@endsection
+
+@section('footer')
+    <div class="d-flex justify-content-center mb-5">
+        copyright 2019 sato.
     </div>
 @endsection

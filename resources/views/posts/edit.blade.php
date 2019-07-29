@@ -62,3 +62,9 @@
         </div>
     </div>
 @endsection
+
+@section('footer')
+    <div class="d-flex justify-content-center mb-5">
+        copyright 2019 sato.
+    </div>
+@endsection
