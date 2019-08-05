@@ -11,11 +11,11 @@
             <div class="table">
             <table class="table table-striped">
                 <div class="card-header">
-                    {{ $post->title }}
+                    {{ $post->name }}
                 </div>
                 <div class="card-body">
                     <p class="card-text">
-                        {!! nl2br(e(str_limit($post->message, 200))) !!}
+                        {!! nl2br(e(str_limit($post->kana, 100))) !!}
                     </p>
                 </div>
                 <a class="card-info" href="{{ route('posts.show', ['post' => $post]) }}">

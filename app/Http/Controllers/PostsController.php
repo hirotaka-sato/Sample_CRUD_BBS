@@ -4,13 +4,15 @@ namespace App\Http\Controllers;
 
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
-use App\Post;
+use App\Author;
+use App\Book;
+use App\Bookdetail;
 
 class PostsController extends Controller
 {
     public function index()
     {
-        $posts = Post::orderBy('created_at', 'desc')->paginate(2);
+        $posts = Author::orderBy('created_at', 'desc')->paginate(2);
 
         return view('posts.index', ['posts' => $posts]);
     }
@@ -23,18 +25,18 @@ class PostsController extends Controller
     public function store(Request $request)
     {
         $params = $request->validate([
-            'title' => 'required|max:50',
-            'message' => 'required|max:2000',
+            'name' => 'required|max:100',
+            'kana' => 'required|max:100',
         ]);
 
-        Post::create($params);
+        Author::create($params);
 
         return redirect('/');
     }
 
     public function show($id)
     {
-        $post = Post::findOrFail($id);
+        $post = Author::findOrFail($id);
 
         return view('posts.show', [
             'post' => $post,
@@ -43,7 +45,7 @@ class PostsController extends Controller
 
     public function edit($id)
     {
-        $post = Post::findOrFail($id);
+        $post = Author::findOrFail($id);
 
         return view('posts.edit', [
             'post' => $post,
@@ -53,11 +55,11 @@ class PostsController extends Controller
     public function update($id, Request $request)
     {
         $params = $request->validate([
-            'title' => 'required|max:50',
-            'message' => 'required|max:2000',
+            'name' => 'required|max:100',
+            'kana' => 'required|max:100',
         ]);
 
-        $post = Post::findOrFail($id);
+        $post = Author::findOrFail($id);
         $post->fill($params)->save();
 
         return redirect()->route('posts.show', ['post' => $post]);
@@ -65,7 +67,7 @@ class PostsController extends Controller
 
     public function destroy($id)
     {
-        $post = Post::findOrFail($id);
+        $post = Author::findOrFail($id);
 
         \DB::transaction(function () use ($post) {
             $post->delete();

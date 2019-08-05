@@ -20,15 +20,27 @@
             </div>
             <table class="table table-bordered&gt table-dark">
             <h1 class="h5 mb-4">
-                {{ $post->title }}
+                ＜著者＞
+                {{ $post->name }}
             </h1>
             </table>
             <table class="table table-bordered&gt">
             <table class="table table-striped">
             <p class="mb-5">
-                {!! nl2br(e($post->message)) !!}
+                ＜ﾁｮｼｬﾒｲ＞
+                {!! nl2br(e($post->kana)) !!}
             </p>
             </table>
+            </table>
+            <table class="table table-bordered&gt table-dark">
+            <h1 class="h5 mb-4">
+                ＜本のタイトル＞<br>
+                @foreach($post as $book)
+                    <li>{{ optional($post->book)->name }}</li><br>
+                ＜本の値段＞<br>
+                    <li>{{ optional($post->book)->price }}</li><br>
+                @endforeach
+            </h1>
             </table>
         </div>
     </div>

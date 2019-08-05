@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>侍エンジニア掲示板　Simple BBS Test-01</title>
+    <title>Book Store's 掲示板　Relation DB Test-01</title>
 
     <link
         rel="stylesheet"
@@ -15,7 +15,7 @@
     <header class="navbar navbar-dark bg-primary">
         <div class="container">
             <a class="navbar-brand" href="{{ url('') }}">
-                侍エンジニア掲示板　Simple BBS Test-01
+                Book Store's 掲示板　Relation DB Test-01
             </a>
             <a class="btn btn-success" href="{{ url('/home') }}">
                     Home

@@ -4,7 +4,7 @@
     <div class="container mt-4">
         <div class="border p-4">
             <h1 class="h5 mb-4">
-                投稿の新規作成
+                本の新規登録
             </h1>
 
             <form method="POST" action="{{ route('posts.store') }}">
@@ -12,36 +12,36 @@
 
                 <fieldset class="mb-4">
                     <div class="form-group">
-                        <label for="title">
-                            タイトル
+                        <label for="name">
+                            著者
                         </label>
                         <input
-                            id="title"
-                            name="title"
-                            class="form-control {{ $errors->has('title') ? 'is-invalid' : '' }}"
-                            value="{{ old('title') }}"
+                            id="name"
+                            name="name"
+                            class="form-control {{ $errors->has('name') ? 'is-invalid' : '' }}"
+                            value="{{ old('name') }}"
                             type="text"
                         >
-                        @if ($errors->has('title'))
+                        @if ($errors->has('name'))
                             <div class="invalid-feedback">
-                                {{ $errors->first('title') }}
+                                {{ $errors->first('name') }}
                             </div>
                         @endif
                     </div>
 
                     <div class="form-group">
-                        <label for="message">
-                            メッセージ
+                        <label for="kana">
+                            ﾁｮｼｬﾒｲ（フリガナ）
                         </label>
                         <textarea
-                            id="message"
-                            name="message"
-                            class="form-control {{ $errors->has('message') ? 'is-invalid' : '' }}"
+                            id="kana"
+                            name="kana"
+                            class="form-control {{ $errors->has('kana') ? 'is-invalid' : '' }}"
                             rows="4"
-                        >{{ old('message') }}</textarea>
-                        @if ($errors->has('message'))
+                        >{{ old('kana') }}</textarea>
+                        @if ($errors->has('kana'))
                             <div class="invalid-feedback">
-                                {{ $errors->first('message') }}
+                                {{ $errors->first('kana') }}
                             </div>
                         @endif
                     </div>
@@ -52,7 +52,7 @@
                         </a>
 
                         <button type="submit" class="btn btn-primary">
-                            投稿する
+                            登録する
                         </button>
                     </div>
                 </fieldset>
