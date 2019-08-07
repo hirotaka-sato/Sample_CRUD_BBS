@@ -14,9 +14,9 @@ class Author extends Model
         'kana',
     ];
 
-    public function Books()
+    public function books()
     {
-        return $this->hasMany('\App\Book', 'author_id');
+        return $this->hasMany(Book::class);
     }
 
 }

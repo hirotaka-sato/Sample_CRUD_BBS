@@ -35,10 +35,10 @@
             <table class="table table-bordered&gt table-dark">
             <h1 class="h5 mb-4">
                 ＜本のタイトル＞<br>
-                @foreach($post as $book)
-                    <li>{{ optional($post->book)->name }}</li><br>
+                @foreach($books as $book)
+                    <li>{{ optional($book)->name }}</li><br>
                 ＜本の値段＞<br>
-                    <li>{{ optional($post->book)->price }}</li><br>
+                    <li>{{ optional($book)->bookdetail_id }}</li><br>
                 @endforeach
             </h1>
             </table>

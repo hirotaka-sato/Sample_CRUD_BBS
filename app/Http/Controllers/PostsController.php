@@ -36,10 +36,12 @@ class PostsController extends Controller
 
     public function show($id)
     {
-        $post = Author::findOrFail($id);
+        $post = Author::find($id);
+        $books = Author::find($id)->books;
 
         return view('posts.show', [
             'post' => $post,
+            'books' => $books,
         ]);
     }
 
