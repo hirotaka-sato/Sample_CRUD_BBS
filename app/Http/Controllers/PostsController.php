@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Author;
 use App\Book;
 use App\Bookdetail;
+use App\Publisher;
 
 class PostsController extends Controller
 {
@@ -38,6 +39,7 @@ class PostsController extends Controller
     {
         $post = Author::find($id);
         $books = Author::find($id)->books;
+
 
         return view('posts.show', [
             'post' => $post,

@@ -34,11 +34,14 @@
             </table>
             <table class="table table-bordered&gt table-dark">
             <h1 class="h5 mb-4">
-                ＜本のタイトル＞<br>
                 @foreach($books as $book)
-                    <li>{{ optional($book)->name }}</li><br>
+                ＜本のタイトル＞<br>
+                <pre>  {{ optional($book)->name }}<br></pre>
                 ＜本の値段＞<br>
-                    <li>{{ optional($book)->bookdetail_id }}</li><br>
+                <pre>  {{ optional($book)->bookdetail->price }}<br></pre>
+                ＜出版社＞<br>
+                <pre>  {{ optional($book)->publisher->name }}<br>
+                </pre>
                 @endforeach
             </h1>
             </table>

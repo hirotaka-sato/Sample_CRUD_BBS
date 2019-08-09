@@ -7,14 +7,14 @@ use Illuminate\Database\Eloquent\Model;
 
 class Book extends Model
 {
-    public function Detail()
+    public function bookdetail()
     {
-        return $this->hasOne('\App\Bookdetail', 'id');
+        return $this->belongsTo(Bookdetail::class);
     }
 
-    public function Publisher()
+    public function publisher()
     {
-        return $this->hasMany('\App\Publisher', 'id');
+        return $this->belongsTo(Publisher::class);
     }
 
     public function author()
