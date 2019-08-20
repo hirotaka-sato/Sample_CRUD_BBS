@@ -15,10 +15,10 @@
     <header class="navbar navbar-dark bg-primary">
         <div class="container">
             <a class="navbar-brand" href="{{ url('') }}">
-                Book Store's 掲示板　Relation DB Test-01
+                Book Store's 掲示板　INDEX (click here)
             </a>
             <a class="btn btn-success" href="{{ url('/home') }}">
-                    Home
+                    Laravel Home
             </a>
         </div>
     </header>

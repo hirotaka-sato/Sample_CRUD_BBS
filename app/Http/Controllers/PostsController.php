@@ -13,7 +13,7 @@ class PostsController extends Controller
 {
     public function index()
     {
-        $posts = Author::orderBy('created_at', 'desc')->paginate(2);
+        $posts = Author::orderBy('created_at', 'desc')->paginate(5);
 
         return view('posts.index', ['posts' => $posts]);
     }
